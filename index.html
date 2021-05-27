@@ -7,6 +7,41 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>mijn pagina</h1>
+    <p>maak geel</p>
+    <p>maak groen</p>
+    <p>maak oranje</p>
+
+    <input type="button" value="reset" id="myButton">
+
+    <script>
+
+        let alineas  = document.getElementsByTagName('p');
+        const myButton = document.getElementById('myButton');
+
+        let colors = ['yellow','green','orange'];
+        let bodyColors = ['black','gray','midnightblue'];
+
+        for(let i=0; i<alineas.length;i++){
+            alineas[i].addEventListener('click',(evt) => {
+                setAchtergrond(i);
+            });
+        }
+
+        function setAchtergrond(i){
+            alineas[i].style.background = colors[i];
+            document.body.style.background = bodyColors[i];
+        }
+
+        myButton.addEventListener('click', () => {
+            for(let i =0; i<alineas.length; i++){
+                alineas[i].style.background = "white";
+            };
+            document.body.style.background = "white"
+
+        });
+
+    </script>
     
 </body>
 </html>
