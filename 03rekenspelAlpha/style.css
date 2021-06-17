@@ -2,6 +2,11 @@ body{
     background: midnightblue;
 }
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/Capsmall.ttf);
+  }
+
 #container{
     width: 30em;
     height: 10em;
@@ -14,7 +19,12 @@ body{
 }
 
 #opgaveblad{
+    font-family: myFirstFont;
+    font-size: 30px;
     background: violet;
+    text-align: center;
+    height:  3em;
+    padding: 20px;
 }
 
 #antwoordenblad{
