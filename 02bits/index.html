@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    is alles gelukt?
+    
+    <script>
+        for(let i=0; i<5;i++){
+            let element = document.createElement('h1');
+            element.innerHTML = "dit is een kopje";
+            element.style.background = "red";
+            element.style.color = "white";
+            element.style.width = "400px";
+            element.style.margin = "auto";
+            element.style.height = " 100px";
+            element.style.padding = "20px";
+            element.style.border = "2px black solid";
+            document.body.appendChild(element);
+
+            element.addEventListener('click',(e) => {
+                if(e.target.style.background == "red"){
+                    e.target.style.background = "green";
+                } else {
+                    e.target.style.background = "red";
+                }
+            });
+
+        }
+
+
+    </script>
+</body>
+</html>
