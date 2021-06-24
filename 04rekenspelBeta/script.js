@@ -1,9 +1,11 @@
-let getalA,getalB,antwoord,jouwAntwoord,goedFout;
+let getalA,getalB,antwoord,jouwAntwoord,goedFout,mySound;
 
 const opgaveblad = document.getElementById('opgaveblad');
 const input1 = document.getElementById('input1');
 const execButton = document.getElementById('execButton');
 const container = document.getElementById('container');
+
+mySound = new Audio();
 
 maakOpgave();
 
@@ -28,11 +30,17 @@ function checkAntwoord(evt){
         if(antwoord == jouwAntwoord){
             goedFout = true;
             container.style.background = "green";
+            mySound.src = "media/goed.wav";
+            mySound.play();
+            
 
         } else {
             goedFout = false;
             container.style.background = "red";
+            mySound.src = "media/fout.mp3";
+            mySound.play();
         }
+        
         setTimeout(wachten,2000);
     }
 }
@@ -42,4 +50,5 @@ function wachten(){
     input1.value = "";
     input1.focus();
     maakOpgave();
+    mySound.pause();
 }
